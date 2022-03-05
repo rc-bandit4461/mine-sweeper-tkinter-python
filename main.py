@@ -378,13 +378,13 @@ class Minesweeper():
             print('Pas de places pour le score courant')
             return
         if(x > len(self.topScores[self.currentDifficulty])):
-            self.topScores[self.currentDifficulty].apptk.end((
+            self.topScores[self.currentDifficulty].append((
                 self.username, self.userLastName, self.score, self.counter))
             self.root.update()
             return
         #On ajoute cette case avec n'importe puisqu'on va écraser les valeurs de droite à gauche ensuite pour faire place au nouveau score
         if(len(self.topScores[self.currentDifficulty]) < self.maxTopScoreBoardLength):
-            self.topScores[self.currentDifficulty].apptk.end((
+            self.topScores[self.currentDifficulty].append((
                 self.username, self.userLastName, self.score, self.counter))
         
         for j in range(len(self.topScores[self.currentDifficulty])-1, x, -1):
